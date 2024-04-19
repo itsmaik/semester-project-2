@@ -1,7 +1,7 @@
 {
   "name": "semester-project-2",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,15 +26,15 @@
     "sass": "^1.75.0"
   },
   "lint-staged": {
-  "*.js": [
-    "prettier --write",
-    "eslint --cache --fix"
-  ],
-  "*.html": [
-    "prettier --write"
-  ],
-  "*.scss": [
-    "prettier --write"
-  ]
+    "*.js": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
