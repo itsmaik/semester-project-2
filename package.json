@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass": "sass src/scss:dist/css --watch"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
