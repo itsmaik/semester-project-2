@@ -3,15 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to BidBlast homepage." />
+    <meta name="description" content="Welcome to BidBlast homepage.">
     <script src="./src/js/index.js" defer type="module"></script>
     <title>Homepage|BidBlast</title>
   </head>
+
   <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Vite!</h1>
-      <button class="btn btn-primary">Primary button</button>
-      <button class="btn btn-success">Third button</button>
+    <nav class="navbar navbar-expand-lg p-lg-4 navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand dm-sans-700 text-white" href="#">BidBlast</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Listings</a>
+            </li>
+          </ul>
+          <button class="btn btn-secondary me-2 px-lg-4" type="button">Login</button>
+          <button class="btn btn-outline-secondary px-lg-4" type="button">Register</button>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar d-none d-lg-block navbar-expand-lg p-lg-3 navbar-light bg-white">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Listings
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Fashion</a></li>
+                <li><a class="dropdown-item" href="#">Furniture</a></li>
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><a class="dropdown-item" href="#">Books</a></li>
+                <li><a class="dropdown-item" href="#">Sport</a></li>
+                <li><a class="dropdown-item" href="#">Art</a></li>
+                <li><a class="dropdown-item" href="#">Instruments</a></li>
+                <li><a class="dropdown-item" href="#">Gardening</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Footer -->
+    <div class="footer bg-success">
+      <div class="container">
+        <p class="text-center p-4 text-white">BidBlast © 2024. All rights reserved.</p>
+      </div>
     </div>
+    
   </body>
 </html>
