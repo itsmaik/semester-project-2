@@ -5,6 +5,8 @@ $success: #5488a5;
 $position-values: (
   0: 0,
   10: 10%,
+  20: 20%,
+  30: 30%,
   40: 40%,
   50: 50%,
   100: 100%,
@@ -31,9 +33,23 @@ $position-values: (
   width: 100%;
   height: 8rem;
 }
+
 .dm-sans-700 {
   font-family: 'DM Sans', sans-serif;
   font-size: x-large;
   font-weight: 700;
   letter-spacing: 0.25px;
+}
+
+.category-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.auction-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+p {
+  margin: auto;
 }
