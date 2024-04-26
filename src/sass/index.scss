@@ -53,3 +53,26 @@ $position-values: (
 p {
   margin: auto;
 }
+
+.subscribe-section {
+  background: url('../assets/img/Vector.png') no-repeat center center;
+  background-size: cover;
+  height: 23rem;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-media {
+  width: 90%;
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+}
