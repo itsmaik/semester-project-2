@@ -22,7 +22,7 @@ export function registerController() {
     } catch (error) {
       alert('Error during registration: ' + error.message);
     } finally {
-      document.querySelector('#registerModal'); //make loading fc
+      document.querySelector('#registerModal'); //make loading
     }
   });
 }
