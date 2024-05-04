@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">About us</a>
@@ -32,16 +32,19 @@
               <a class="nav-link text-white" href="#">Contact us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Listings</a>
+              <a class="nav-link text-white" href="/src/pages/listings/">Listings</a>
             </li>
           </ul>
-          <!------------------- Login/Register Buttons --------------------->
-          <button class="btn btn-secondary mb-2 mb-lg-0 me-2 px-lg-4" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Login</button>
+          <!------------------- Login Button --------------------->
+          <button id="" class="btn btn-secondary mb-2 mb-lg-0 me-2 px-lg-4 login-modal-btn" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Login</button>
           <!------------------- Login Container --------------------->
           <div id="login-modal-container"></div>
 
+          <!------------------- Register Button --------------------->
+          <button id="" class="btn btn-outline-secondary px-lg-4 register-modal-btn" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Register</button>
 
-          <button class="btn btn-outline-secondary px-lg-4" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Register</button>
+          <!------------------- Logout Button --------------------->
+          <button id="" class="btn btn-outline-secondary px-lg-4 logout-btn" type="button">Logout</button>
           <!------------------- Register Container --------------------->
           <div id="register-modal-container"></div>
         </div>
@@ -53,7 +56,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link link-primary active" aria-current="page" href="#">Home</a>
+              <a class="nav-link link-primary active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">About us</a>
@@ -61,21 +64,8 @@
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">Contact us</a>
             </li>
-            <!-------------------- listings and Dropdown -------------------->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle link-primary" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Listings
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item link-primary" href="#">Fashion</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Furniture</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Electronics</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Books</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Sport</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Art</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Instruments</a></li>
-                <li><a class="dropdown-item link-primary" href="#">Gardening</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link link-primary" href="/src/pages/listings/">Listings</a>
             </li>
           </ul>
         </div>
@@ -115,7 +105,7 @@
         </div>
       </div>
       
-      <div class="row">
+      <div class="row all-listings">
         <!--------------------------- Auction Item---------------------------->
         <div class="col-md-4 mt-3 mb-3 mb-md-5">
           <div class="card auction-card">
@@ -138,68 +128,24 @@
             </div>
           </div>
         </div>
-        <!--------------------------- Auction Item---------------------------->
-        <div class="col-md-4 mt-3 mb-3 mb-md-5">
-          <div class="card auction-card">
-            <img src="https://source.unsplash.com/featured/?furniture" class="card-img-top" alt="Furniture">
-            <div class="card-body">
-              <h5 class="card-title">Shabby Chic Chair</h5>
-              <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum sapiente nemo placeat!</p>
-              <a href="#" class="btn btn-primary">More info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mt-3 mb-3 mb-md-5">
-          <div class="card auction-card">
-            <img src="https://source.unsplash.com/featured/?furniture" class="card-img-top" alt="Furniture">
-            <div class="card-body">
-              <h5 class="card-title">Shabby Chic Chair</h5>
-              <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum sapiente nemo placeat!</p>
-              <a href="#" class="btn btn-primary">More info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mt-3 mb-3 mb-md-5">
-          <div class="card auction-card">
-            <img src="https://source.unsplash.com/featured/?furniture" class="card-img-top" alt="Furniture">
-            <div class="card-body">
-              <h5 class="card-title">Shabby Chic Chair</h5>
-              <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum sapiente nemo placeat!</p>
-              <a href="#" class="btn btn-primary">More info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mt-3 mb-3 mb-md-5">
-          <div class="card auction-card">
-            <img src="https://source.unsplash.com/featured/?furniture" class="card-img-top" alt="Furniture">
-            <div class="card-body">
-              <h5 class="card-title">Shabby Chic Chair</h5>
-              <p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum sapiente nemo placeat!</p>
-              <a href="#" class="btn btn-primary">More info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-5">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
       </div>
+      <!--------------------------- Pagination ---------------------------->
+      <div id="pagination" class="row mb-5">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled" id="prev-page">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+            <li class="page-item" id="next-page">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
     </div>
     
     <!------------------------------- FOOTER --------------------------------->
