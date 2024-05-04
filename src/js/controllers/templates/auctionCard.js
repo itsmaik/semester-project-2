@@ -15,7 +15,7 @@ export function createAuctionCard(listing) {
               <div class="card-body">
                   <h5 class="card-title">${listing.title}</h5>
                   <p class="card-text">${listing.description}</p>
-                  <a href="#" class="btn btn-primary">More Info</a>
+                  <a href="/src/pages/single-item/?id=${listing.id}" class="btn btn-primary">More Info</a>
               </div>
           </div>
       </div>
