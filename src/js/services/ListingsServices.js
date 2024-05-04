@@ -13,7 +13,15 @@ export const ListingsServices = {
 
   async getAllListings() {
     const response = await fetchWithHeaders(
-      `${BASE_API_URL}/auction/listings`,
+      `${BASE_API_URL}/auction/listings?_active=true`,
+      'GET',
+    );
+    return response.data;
+  },
+
+  async getAllListingsPage(page, limit) {
+    const response = await fetchWithHeaders(
+      `${BASE_API_URL}/auction/listings?_active=true&page=${page}&limit=${limit}`,
       'GET',
     );
     return response.data;
