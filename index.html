@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg p-lg-4 navbar-light bg-primary">
       <div class="container-fluid">
         <!----------------------- Logo -------------------------------->
-        <a class="navbar-brand dm-sans-700 text-white" href="#">BidBlast</a>
+        <a class="navbar-brand dm-sans-700 text-white" href="/">BidBlast</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">About us</a>
@@ -37,15 +37,15 @@
             </li>
           </ul>
           <!------------------- Login Button --------------------->
-          <button id="login-modal-btn" class="btn btn-secondary mb-2 mb-lg-0 me-2 px-lg-4" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Login</button>
+          <button id="" class="btn btn-secondary mb-2 mb-lg-0 me-2 px-lg-4 login-modal-btn" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Login</button>
           <!------------------- Login Container --------------------->
           <div id="login-modal-container"></div>
 
           <!------------------- Register Button --------------------->
-          <button id="register-modal-btn" class="btn btn-outline-secondary px-lg-4" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Register</button>
+          <button id="" class="btn btn-outline-secondary px-lg-4 register-modal-btn" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Register</button>
 
           <!------------------- Logout Button --------------------->
-          <button id="logout-btn" class="btn btn-outline-secondary px-lg-4" type="button">Logout</button>
+          <button id="" class="btn btn-outline-secondary px-lg-4 logout-btn" type="button">Logout</button>
           <!------------------- Register Container --------------------->
           <div id="register-modal-container"></div>
         </div>
@@ -57,7 +57,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link link-primary active" aria-current="page" href="#">Home</a>
+              <a class="nav-link link-primary active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">About us</a>
@@ -65,21 +65,8 @@
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">Contact us</a>
             </li>
-            <!-------------------- listings and Dropdown -------------------->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle link-primary" href="/src/pages/listings/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Listings
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Fashion</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Furniture</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Electronics</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Books</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Sport</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Art</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Instruments</a></li>
-                <li><a class="dropdown-item link-primary" href="/src/pages/listings/">Gardening</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link link-primary" href="/src/pages/listings/">Listings</a>
             </li>
           </ul>
         </div>
@@ -156,7 +143,7 @@
         </div>
       </div>
       
-      <div id="auction-container" class="row">
+      <div id="auction-container" class="row auction-container">
         <!--------------------------- Auction Item---------------------------->
         <div class="col-md-4 mt-3 mb-3 mb-md-5">
           <div class="card auction-card">
@@ -190,7 +177,7 @@
         </div>
       </div>
       <!----------------------- Ending Soon Row --------------------------->
-      <div class="row">
+      <div class="row ending-soon">
         <!---------------------- Ending Soon Item ------------------------->
         <div class="col-md-4 mt-3 mb-3 mb-md-5">
           <div class="card auction-card">
