@@ -9,16 +9,15 @@ export function updateButtonVisibility() {
 
   if (AuthServices.getAccessToken()) {
     console.log(AuthServices.getAccessToken());
-    document.getElementById('login-modal-btn').style.display = 'none';
-    document.getElementById('register-modal-btn').style.display = 'none';
-    document.getElementById('logout-btn').style.display = 'inline-block';
-    console.log(document.getElementById('logout-btn'));
+    document.querySelector('.login-modal-btn').style.display = 'none';
+    document.querySelector('.register-modal-btn').style.display = 'none';
+    document.querySelector('.logout-btn').style.display = 'inline-block';
   } else {
-    document.getElementById('logout-btn').style.display = 'none';
+    document.querySelector('.logout-btn').style.display = 'none';
   }
 }
 
-document.getElementById('logout-btn').addEventListener('click', function () {
+document.querySelector('.logout-btn').addEventListener('click', function () {
   localStorage.removeItem('accessToken');
   updateButtonVisibility();
   window.location.reload();
