@@ -1,3 +1,5 @@
+import timestampConverter from '../../utils/functions/timestampConverter';
+
 export function createAuctionCard(listing) {
   const imageUrl =
     listing.media && listing.media.length > 0
@@ -15,7 +17,11 @@ export function createAuctionCard(listing) {
               <div class="card-body">
                   <h5 class="card-title">${listing.title}</h5>
                   <p class="card-text">${listing.description}</p>
-                  <a href="/src/pages/single-item/?id=${listing.id}" class="btn btn-primary">More Info</a>
+                  <a href="/src/pages/single-item/?id=${listing.id}" class="btn btn-primary mt-3">More Info</a>
+                  <div class="card-footer mt-5">
+                    <p class="card-text mt-2">Bids: ${String(listing._count.bids)}</p>
+                    <small class="fst-italic">End date: ${timestampConverter(listing.endsAt)}</small>
+                  </div>
               </div>
           </div>
       </div>
