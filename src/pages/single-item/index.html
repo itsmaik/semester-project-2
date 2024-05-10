@@ -51,7 +51,7 @@
       </div>
     </nav>
     <!--------------------------- SUB-NAVBAR ----------------------------->
-    <nav class="navbar d-none d-lg-block navbar-expand-lg p-lg-3 navbar-light bg-white">
+    <nav class="navbar d-none d-lg-block navbar-expand-lg p-lg-3 navbar-light bg-secondary">
       <div class="container-fluid">
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav mb-2 mb-lg-0">
@@ -78,58 +78,76 @@
       <div class="row d-flex justify-content-center mb-4">
         <div class="single-item-media d-flex flex-row">
           <img class="img-thumbnail object-fit-cover rounded-circle" style="width: 4rem; height: 4rem;" src="https://source.unsplash.com/featured/?profile" alt="">
-          <div class="ps-3 pt-1">
-            <p class="m-0"><strong>Seller</strong></p>
-            <p>Maik</p>
+          <div class="ps-3 pt-1 d-flex justify-content-between w-100">
+            <div class="w-25">
+              <p class="m-0"><strong>Seller</strong></p>
+              <p>Maik</p>
+            </div>
+
+            <div id="ownerBtns d-flex">
+              <button id="" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75 me-1" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Edit</button>
+              <button id="" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Delete</button>
+            </div> 
+
+            <!-- <div>
+              <button id="" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75 me-1" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">View profile</button>
+            </div> -->
+
           </div>
         </div>
       </div>
 
-      <div class="auction-container d-flex justify-content-center">
+      <div class="auction-container d-flex justify-content-center position-relative">
         <div class="card mb-3 single-item-media">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-5">
+
               <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
-                  <div class="carousel-item active auction-card">
+
+                  <picture class="carousel-item active auction-card">
                     <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item auction-card">
+                  </picture>
+
+                  <picture class="carousel-item auction-card">
                     <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item auction-card">
+                  </picture>
+
+                  <picture class="carousel-item auction-card">
                     <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
-                  </div>
+                  </picture>
                 </div>
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
+
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
             </div>
-            <div class="col-md-8">
-              <div class="card-body text-center h-100 d-flex flex-column">
-                <h5 class="card-title text-center">Card title</h5>
-                <p class="text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            
+            <div class="col-md-7">
+              <div class="card-body h-100 d-flex flex-column position-relative p-0">
 
-                <div class="mt-auto">
-                  <button id="" class="btn btn-success text-white px-lg-4 login-modal-btn" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Bid Now</button>
-  
-                  <button id="" class="btn btn-outline-primary px-lg-4 register-modal-btn" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Edit</button>
-                </div> 
+                <article class="d-flex flex-column h-100 py-5 px-4 px-lg-5">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="py-1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button class="btn btn-success text-white px-lg-4 login-modal-btn btn-bid mb-5" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Bid Now</button>
+                </article>
+
+                <div class="py-3 bg-secondary position-absolute bottom-0 w-100">
+                  <div class="d-flex justify-content-between align-items-center px-4 px-lg-5">
+                    <p class="m-0">Bids: 0</p>  
+                    <small class="fst-italic">End date: 07/10/2026</small>
+                  </div>
+                </div>
               </div> 
-              
             </div>
-            <div class="card-footer py-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <p class="m-0">Bids: 0</p> <!-- mb-0 removes bottom margin -->
-                <small class="fst-italic">End date: 07/10/2026</small>
-              </div>
-            </div>
+            
             
           </div>
         </div>
