@@ -74,19 +74,130 @@
 
 
     <div class="container mt-5 mb-5">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+
+      <div class="row d-flex justify-content-center mb-4">
+        <div class="single-item-media d-flex flex-row">
+          <img class="img-thumbnail object-fit-cover rounded-circle" style="width: 4rem; height: 4rem;" src="https://source.unsplash.com/featured/?profile" alt="">
+          <div class="ps-3 pt-1">
+            <p class="m-0"><strong>Seller</strong></p>
+            <p>Maik</p>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+
+      <div class="auction-container d-flex justify-content-center">
+        <div class="card mb-3 single-item-media">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active auction-card">
+                    <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item auction-card">
+                    <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item auction-card">
+                    <img src="https://source.unsplash.com/featured/?furniture" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body text-center h-100 d-flex flex-column">
+                <h5 class="card-title text-center">Card title</h5>
+                <p class="text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                <div class="mt-auto">
+                  <button id="" class="btn btn-success text-white px-lg-4 login-modal-btn" data-bs-toggle="modal"  data-bs-target="#loginModal" type="button">Bid Now</button>
+  
+                  <button id="" class="btn btn-outline-primary px-lg-4 register-modal-btn" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Edit</button>
+                </div> 
+              </div> 
+              
+            </div>
+            <div class="card-footer py-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="m-0">Bids: 0</p> <!-- mb-0 removes bottom margin -->
+                <small class="fst-italic">End date: 07/10/2026</small>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4 mb-4">
+      <!-- Header Text -->
+      <div class="row">
+        <div class="col text-center">
+          <h4>Bid History</h4>
+        </div>
+      </div>
+    
+      <!-- Cards for Stats -->
+      <div class="row justify-content-center mt-3">
+        <!-- First Stat Card -->
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-md-5 text-center">
+                <img src="https://source.unsplash.com/featured/?profile" class="object-fit-cover ms-md-2 mt-2 mt-md-0" alt="Happy customer" style="width: 3rem; height: 3rem;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body text-center p-2">
+                  <p class="card-title text-nowrap">Maik</p>
+                  <p class="card-text"><strong>$250</strong></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+    
+        <!-- Second Stat Card -->
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-md-5 text-center">
+                <img src="https://source.unsplash.com/featured/?profile" class="object-fit-cover ms-md-2 mt-2 mt-md-0" alt="Happy customer" style="width: 3rem; height: 3rem;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body text-center p-2">
+                  <p class="card-title text-nowrap">Maik</p>
+                  <p class="card-text"><strong>$250</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Third Stat Card -->
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="row g-0 align-items-center justify-content-center">
+              <div class="col-md-5 text-center">
+                <img src="https://source.unsplash.com/featured/?profile" class="object-fit-cover ms-md-2 mt-2 mt-md-0" alt="Happy customer" style="width: 3rem; height: 3rem;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body text-center p-2">
+                  <p class="card-title text-nowrap">Maik</p>
+                  <p class="card-text"><strong>$250</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   
@@ -95,7 +206,7 @@
       <div class="container">
         <p class="text-center p-4 text-white">BidBlast © 2024. All rights reserved.</p>
       </div>
-    </div>
-    
+    </div> 
+
   </body>
 </html>
