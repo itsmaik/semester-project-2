@@ -3,3 +3,7 @@
 .single-item-media {
   @include media-width(100%, 90%, 75%);
 }
+
+.btn-bid {
+  @include media-width(100%, 60%, 40%);
+}
