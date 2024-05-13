@@ -12,10 +12,10 @@ export function updateButtonVisibility() {
     document.querySelector('.login-modal-btn').style.display = 'none';
     document.querySelector('.register-modal-btn').style.display = 'none';
     document.querySelector('.logout-btn').style.display = 'inline-block';
-    document.querySelector('.profile-card').style.display = 'inline-block';
+    document.querySelector('.profile-btn').style.display = 'inline-block';
   } else {
+    document.querySelector('.profile-btn').style.display = 'none';
     document.querySelector('.logout-btn').style.display = 'none';
-    document.querySelector('.profile-card').style.display = 'none';
   }
 }
 
