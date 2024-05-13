@@ -1,5 +1,5 @@
 import { AuthServices } from '../../services/AuthServices';
-import { updateButtonVisibility } from '../../pages/home/logged';
+import { updateButtonVisibility } from '../actions/logged';
 
 export function loginController() {
   const loginForm = document.querySelector('#loginModal form');
