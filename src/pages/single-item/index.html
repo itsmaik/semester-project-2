@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Welcome to BidBlast homepage.">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/src/js/main.js" defer type="module"></script>
-    <title>Homepage|BidBlast</title>
+    <title>Single-Item|BidBlast</title>
   </head>
 
   <body>
@@ -73,25 +73,77 @@
     </nav>
 
 
+    <!--------------------------------- Main-body-container ------------------------------->
     <div class="container mt-5 mb-5">
-
+      <!-------------------------------- Seller-profile ------------------------------>
       <div class="row d-flex justify-content-center mb-4">
         <div class="single-item-media d-flex flex-row">
           <img class="img-thumbnail object-fit-cover rounded-circle" style="width: 4rem; height: 4rem;" src="https://source.unsplash.com/featured/?profile" alt="">
           <div class="ps-3 pt-1 d-flex justify-content-between w-100">
             <div class="w-25">
               <p class="m-0"><strong>Seller</strong></p>
-              <p>Maik</p>
+              <p>Lucca</p>
             </div>
+            <!-------------------------------- Edit-btn ------------------------------>
+            <div id="ownerBtns" class="d-flex">
+              <button id="edit-btn" class="btn btn-outline-primary px-lg-4 edit-modal-btn h-75 me-2" data-bs-toggle="modal"  data-bs-target="#editModal" type="button">Edit</button>
 
-            <div id="ownerBtns d-flex">
-              <button id="edit-btm" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75 me-1" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Edit</button>
-              <button id="delete-btn" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">Delete</button>
+              <!--------------------------------- Edit Modal ------------------------>
+              <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                      <h5 class="modal-title" id="editModalLabel">BidBlast</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <!------------------------ Edit form ------------------------>
+                      <form>
+                        <div class="mb-3">
+                          <label for="title" class="form-label">Title</label>
+                          <input type="text" class="form-control" id="title" placeholder="Listing title">
+                        </div>
+                        <div class="mb-3">
+                          <label for="description" class="form-label">Description</label>
+                          <input type="text" class="form-control" id="description" placeholder="Listing description">
+                        </div>
+                        <div class="mb-3">
+                          <label for="gallery" class="form-label">Image URL</label>
+                          <input type="url" class="form-control" id="image-url" placeholder="Image URL">
+                        </div>
+                        <div class="mb-3">
+                          <label for="date" class="form-label">Ends at</label>
+                          <input type="date" class="form-control" id="event-date" placeholder="Choose a date">
+                        </div>
+                        <!-------------------------- Update-btn ------------------------->
+                        <button type="submit" class="btn btn-primary px-5">Update</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-------------------------- Delete-btn ------------------------->
+              <button id="delete-btn" class="btn btn-outline-primary px-lg-4 delete-modal-btn h-75" data-bs-toggle="modal"  data-bs-target="#deleteModal" type="button">Delete</button>
+
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                      <h5 class="modal-title" id="editModalLabel">BidBlast</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="mb-4 text-center"> Are you sure that you want to delete this item permanently?</p>
+                      <div class="d-flex justify-content-around">
+                        <button type="submit" class="btn btn-outline-primary px-5">Cancel</button>
+                        <button type="submit" class="btn btn-primary px-5">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div> 
-
-            <!-- <div>
-              <button id="profileBtn" class="btn btn-outline-primary px-lg-4 register-modal-btn h-75 me-1" data-bs-toggle="modal"  data-bs-target="#registerModal" type="button">View profile</button>
-            </div> -->
 
           </div>
         </div>
