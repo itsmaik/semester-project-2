@@ -48,6 +48,10 @@ p {
   @include single-line;
 }
 
+.card-title {
+  @include single-line;
+}
+
 .single-item-media {
   @include media-width(100%, 90%, 75%);
 }
