@@ -240,6 +240,7 @@ export function createSingleListingPage(listing) {
                       src="${img.url}"
                       class="d-block w-100"
                       alt="..."
+                      onerror="this.onerror=null;this.src='https://source.unsplash.com/featured/?furniture';this.alt='Default Image';"
                     />
                   </picture>
                 `,

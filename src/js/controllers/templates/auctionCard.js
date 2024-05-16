@@ -17,7 +17,7 @@ export function createAuctionCard(listing) {
   return `
       <div class="col-md-6 col-lg-4 mt-3 mb-3">
           <div class="card auction-card">
-              <img src="${imageUrl}" class="card-img-top" alt="${imageAlt}">
+              <img src="${imageUrl}" class="card-img-top" alt="${imageAlt}" onerror="this.onerror=null;this.src='https://source.unsplash.com/featured/?furniture';this.alt='Default Image';">
               <div class="card-body relative p-0">
                 <div class="p-2 p-lg-4">
                   <h5 class="card-title">${listing.title}</h5>
