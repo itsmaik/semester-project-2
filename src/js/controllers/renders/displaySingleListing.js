@@ -48,7 +48,15 @@ async function displaySingleListing(id) {
         displaySingleListing(id);
       } catch (error) {
         console.error('Error submitting bid:', error);
-        alert('Failed to submit bid.');
+        let errorMessage = 'Failed to submit bid.';
+        if (
+          error.message.includes(
+            '400: Your bid must be higher than the current bid',
+          )
+        ) {
+          errorMessage = 'Your bid must be higher than the current bid';
+        }
+        alert(errorMessage);
       }
     });
   }

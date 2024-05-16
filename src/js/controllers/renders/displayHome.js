@@ -21,7 +21,7 @@ async function displayHomeListings() {
         .filter((listing) => {
           const endsAtDate = new Date(listing.endsAt);
           const now = new Date();
-          return endsAtDate > now; // Ensure listing ends in the future
+          return endsAtDate >= now; // Ensure listing ends in the future
         })
         .sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt)) // Sort listings by end date, soonest first
         .slice(0, MAX_END_SOON); // Take only the first 6
