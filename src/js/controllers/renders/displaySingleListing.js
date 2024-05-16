@@ -53,6 +53,7 @@ async function displaySingleListing(id) {
         alert('Bid submitted successfully!');
         console.log(response);
         displaySingleListing(id);
+        window.location.reload();
       } catch (error) {
         console.error('Error submitting bid:', error);
         let errorMessage = 'Failed to submit bid.';
