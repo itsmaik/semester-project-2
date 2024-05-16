@@ -2,7 +2,7 @@ import { ListingsServices } from '../../services/ListingsServices';
 import { createSingleListingPage } from '../templates/singleListingPage';
 
 const singleListingContainer = document.querySelector(
-  '.container.single-item-listing--container',
+  '.container.single-item-listing-container',
 );
 
 async function displaySingleListing(id) {
