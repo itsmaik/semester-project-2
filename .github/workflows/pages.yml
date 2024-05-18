@@ -1,10 +1,10 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Vite App to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["workflow"]
+    branches: ["workflow"] # Change this to "main" if your default branch is named "main"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,12 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 # Updated to latest version
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3 # Updated to latest version
         with:
-          node-version: '21' 
+          node-version: '20' # Updated to use Node.js 20
 
       - name: Install dependencies
         run: npm install
@@ -45,7 +45,7 @@ jobs:
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3 # Updated to latest version
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -54,4 +54,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2 # Updated to latest version
