@@ -1,8 +1,7 @@
 import timestampConverter from '../../utils/functions/timestampConverter';
 import { AuthServices } from '../../services/AuthServices.js';
 
-export function createSingleListingPage(listing) {
-  console.log(listing);
+export async function createSingleListingPage(listing) {
   // Seller details
   const sellerAvatarUrl = listing.seller.avatar.url;
   const sellerName = listing?.seller?.name ?? '';
@@ -14,9 +13,7 @@ export function createSingleListingPage(listing) {
   const endDate = timestampConverter(listing.endsAt);
 
   const images =
-    listing.media.length > 0
-      ? listing.media
-      : ['https://source.unsplash.com/featured/?item'];
+    listing.media.length > 0 ? listing.media : ['https://placehold.co/300x300'];
 
   const currentUser = AuthServices.getCurrentUser();
   const currentUserName = currentUser?.name ?? '';
@@ -56,7 +53,7 @@ export function createSingleListingPage(listing) {
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <!------------------------ Edit form ------------------------>
+                  <!------------------------ Bid form ------------------------>
                   <form id="bidForm">
                     <div class="mb-3">
                       <label for="amount" class="form-label"
@@ -69,7 +66,7 @@ export function createSingleListingPage(listing) {
                         placeholder="$500"
                       />
                     </div>
-                    <!-------------------------- Update-btn ------------------------->
+                    <!-------------------------- Bid-btn ------------------------->
                     <button type="submit" class="btn btn-primary px-5" id="finishBidBtn">
                       Finish Bid
                     </button>
@@ -116,7 +113,7 @@ export function createSingleListingPage(listing) {
                     </div>
                     <div class="modal-body">
                       <!------------------------ Edit form ------------------------>
-                      <form>
+                      <form id="edit-auction-form">
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
                           <input
@@ -146,15 +143,6 @@ export function createSingleListingPage(listing) {
                             class="form-control"
                             id="image-url"
                             placeholder="Image URL"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="date" class="form-label">Ends at</label>
-                          <input
-                            type="date"
-                            class="form-control"
-                            id="event-date"
-                            placeholder="Choose a date"
                           />
                         </div>
                         <!-------------------------- Update-btn ------------------------->
@@ -207,7 +195,7 @@ export function createSingleListingPage(listing) {
                         >
                           Cancel
                         </button>
-                        <button type="submit" class="btn btn-primary px-5">
+                        <button type="submit" class="btn btn-primary px-5 delete-listing-btn">
                           Delete
                         </button>
                       </div>
@@ -237,7 +225,7 @@ export function createSingleListingPage(listing) {
                     (img, index) => `
                   <picture class="carousel-item ${index === 0 ? 'active' : ''} auction-card">
                     <img
-                      src="${img.url}"
+                      src="${img.url ?? img}"
                       class="d-block w-100"
                       alt="..."
                       onerror="this.onerror=null;this.src='https://source.unsplash.com/featured/?furniture';this.alt='Default Image';"
