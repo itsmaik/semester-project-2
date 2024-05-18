@@ -56,6 +56,7 @@ async function displaySingleListing(id) {
         await ListingsServices.bidOnListing(id, amount);
         alert('Bid submitted successfully!');
         displaySingleListing(id);
+        window.location.reload();
       } catch (error) {
         alert(error.errors[0].message);
       }

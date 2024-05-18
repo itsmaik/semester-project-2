@@ -7,10 +7,6 @@ export async function newListingController() {
   const image = newListingForm.querySelector('input#image-url');
   const endsAt = newListingForm.querySelector('input#event-date');
 
-  // bioInput.value = loggedProfile.bio ?? '';
-  // avatarInput.value = loggedProfile?.avatar.url ?? '';
-  // bannerInput.value = loggedProfile?.banner.url ?? '';
-
   newListingForm
     .querySelector('button')
     .addEventListener('click', async (e) => {

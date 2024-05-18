@@ -22,11 +22,11 @@ export function createProfileCard(profile, loggedProfile) {
     <div class="container">
       <div class="card mb-3">
         <!-- Banner Image -->
-        <img src="${bannerUrl}" class="card-img-top" alt="${bannerAlt}" style="height: 200px; object-fit: cover;">
+        <img src="${bannerUrl}" class="card-img-top object-fit-cover" alt="${bannerAlt}" style="height: 200px;">
 
         <div class="card-body text-center">
           <!-- Avatar Image, centered and overlapping the banner -->
-          <img src="${avatarUrl}" class="rounded-circle border border-5 border-white" alt="${avatarAlt}" style="width: 150px; height: 150px; margin-top: -75px;">
+          <img src="${avatarUrl}" class="rounded-circle border border-5 border-white object-fit-cover" alt="${avatarAlt}" style="width: 150px; height: 150px; margin-top: -75px;">
 
           <!-- Profile Name -->
           <h5 class="card-title mt-2">${name}</h5>
