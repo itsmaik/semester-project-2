@@ -2,9 +2,9 @@
 name: Deploy Vite App to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the testing branch
   push:
-    branches: ["workflow"] # Change this to "main" if your default branch is named "main"
+    branches: ["workflow"] # Change this to the testing branch you are using
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,12 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3 # Updated to latest version
+        uses: actions/checkout@v4 # Updated to the latest version
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3 # Updated to latest version
+        uses: actions/setup-node@v4 # Updated to the latest version
         with:
-          node-version: '21'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -45,13 +45,13 @@ jobs:
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3 # Updated to latest version
+        uses: actions/configure-pages@v3 # Using the latest version
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4 # Updated to the latest version
         with:
-          path: './dist'
+          path: './dist' # Ensure this points to your build directory
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # Updated to latest version
+        uses: actions/deploy-pages@v2 # Using the latest version
