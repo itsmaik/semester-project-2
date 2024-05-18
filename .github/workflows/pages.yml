@@ -28,10 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Updated to the latest version
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 # Updated to the latest version
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -45,16 +45,23 @@ jobs:
         run: npm run build
 
       - name: List build output
-        run: ls -la ./dist # List the contents of the dist directory for debugging
+        run: |
+          echo "Contents of the dist directory:"
+          ls -la ./dist
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3 # Using the latest version
+        uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3 # Updated to the latest version
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Ensure this points to your build directory
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # Using the latest version
+        uses: actions/deploy-pages@v2
+        with:
+          artifact-path: './dist'
+          target: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
