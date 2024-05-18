@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Welcome to BidBlast listings' page." />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/src/js/main.js" defer type="module"></script>
     <title>Listings|BidBlast</title>
@@ -42,7 +38,15 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">New listing</a>
+              <button 
+                class="nav-link link-primary"
+                id="new-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#newListingModal"
+                type="button"
+              >
+                New listing
+              </button>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Contact us</a>
@@ -118,7 +122,15 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-primary" href="#">New listing</a>
+              <button 
+                class="nav-link link-primary"
+                id="new-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#newListingModal"
+                type="button"
+              >
+                New listing
+              </button>
             </li>
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">Contact us</a>
@@ -166,12 +178,13 @@
         <form class="d-flex ms-md-auto form-size">
           <!-- flex-grow-1 allows the form to take up the remaining space -->
           <input
-            class="form-control me-2"
+            class="form-control me-2 search-input"
             type="search"
             placeholder="Search for..."
             aria-label="Search"
+            id="search"
           />
-          <button class="btn btn-primary ms-2 px-lg-4" type="submit">
+          <button class="btn btn-primary ms-2 px-lg-4" type="submit" id="search-btn">
             Search
           </button>
         </form>
@@ -257,6 +270,77 @@
         <p class="text-center p-4 text-white">
           BidBlast © 2024. All rights reserved.
         </p>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="newListingModal"
+      tabindex="-1"
+      aria-labelledby="edit"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="edit">BidBlast</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!------------------------ Create form ------------------------>
+            <form>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  placeholder="Listing title"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label"
+                  >Description</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  placeholder="Listing description"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="gallery" class="form-label"
+                  >Image URL</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="image-url"
+                  placeholder="Image URL"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Ends at</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="event-date"
+                  placeholder="Choose a date"
+                />
+              </div>
+              <!-------------------------- Create-btn ------------------------->
+              <button type="submit" class="btn btn-primary px-5">
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </body>
