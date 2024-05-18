@@ -33,7 +33,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3 # Updated to latest version
         with:
-          node-version: '20' # Updated to use Node.js 20
+          node-version: '21'
 
       - name: Install dependencies
         run: npm install
