@@ -60,8 +60,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          artifact-path: './dist'
-          target: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
