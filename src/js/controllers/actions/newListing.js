@@ -1,9 +1,5 @@
 import { ListingsServices } from '../../services/ListingsServices.js';
 
-document.addEventListener('DOMContentLoaded', function () {
-  newListingController();
-});
-
 export async function newListingController() {
   const newListingForm = document.querySelector('#newListingModal form');
   const title = newListingForm.querySelector('input#title');
@@ -11,27 +7,35 @@ export async function newListingController() {
   const image = newListingForm.querySelector('input#image-url');
   const endsAt = newListingForm.querySelector('input#event-date');
 
-  newListingForm.querySelector('button').addEventListener('click', async () => {
-    if (!title && !endsAt) {
-      alert('Create a title and set an end date!');
-      return;
-    }
+  // bioInput.value = loggedProfile.bio ?? '';
+  // avatarInput.value = loggedProfile?.avatar.url ?? '';
+  // bannerInput.value = loggedProfile?.banner.url ?? '';
 
-    const newListingData = {
-      title: title.value ?? '',
-      description: description.value ?? '',
-      media: image.value
-        ? [
-            {
-              url: image.value,
-              alt: 'Listing Image',
-            },
-          ]
-        : [],
-      endsAt: endsAt.value ?? new Date(),
-    };
+  newListingForm
+    .querySelector('button')
+    .addEventListener('click', async (e) => {
+      e.preventDefault();
 
-    await ListingsServices.createListing(newListingData);
-    window.location.reload();
-  });
+      if (!title && !endsAt) {
+        alert('Create a title and set an end date!');
+        return;
+      }
+
+      const newListingData = {
+        title: title.value ?? '',
+        description: description.value ?? '',
+        media: image.value
+          ? [
+              {
+                url: image.value,
+                alt: 'Listing Image',
+              },
+            ]
+          : [],
+        endsAt: endsAt.value ?? new Date(),
+      };
+
+      await ListingsServices.createListing(newListingData);
+      window.location.reload();
+    });
 }
