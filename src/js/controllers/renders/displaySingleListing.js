@@ -1,6 +1,8 @@
 import { AuthServices } from '../../services/AuthServices';
 import { ListingsServices } from '../../services/ListingsServices';
 import { deleteListingController } from '../actions/deleteListing';
+import { editListingController } from '../actions/editListing';
+import { newListingController } from '../actions/newListing';
 import { createSingleListingPage } from '../templates/singleListingPage';
 
 const singleListingContainer = document.querySelector(
@@ -23,6 +25,8 @@ async function displaySingleListing(id) {
         deleteListingController(listings);
       }
     }
+    newListingController();
+    editListingController(listings);
   } catch (error) {
     console.error('Error displaying single listing:', error);
   }
@@ -49,22 +53,11 @@ async function displaySingleListing(id) {
       }
 
       try {
-        const response = await ListingsServices.bidOnListing(id, amount);
+        await ListingsServices.bidOnListing(id, amount);
         alert('Bid submitted successfully!');
-        console.log(response);
         displaySingleListing(id);
-        window.location.reload();
       } catch (error) {
-        console.error('Error submitting bid:', error);
-        let errorMessage = 'Failed to submit bid.';
-        if (
-          error.message.includes(
-            '400: Your bid must be higher than the current bid',
-          )
-        ) {
-          errorMessage = 'Your bid must be higher than the current bid';
-        }
-        alert(errorMessage);
+        alert(error.errors[0].message);
       }
     });
   }
