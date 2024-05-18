@@ -38,7 +38,15 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">New listing</a>
+              <button 
+                class="nav-link link-primary"
+                id="new-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#newListingModal"
+                type="button"
+              >
+                New listing
+              </button>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Contact us</a>
@@ -114,7 +122,15 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link link-primary" href="#">New listing</a>
+              <button 
+                class="nav-link link-primary"
+                id="new-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#newListingModal"
+                type="button"
+              >
+                New listing
+              </button>
             </li>
             <li class="nav-item">
               <a class="nav-link link-primary" href="#">Contact us</a>
@@ -152,7 +168,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!------------------------ Profile Form ------------------------>
+            <!------------------------ Register form ------------------------>
             <form id="profile-details-form">
               <div class="mb-3">
                 <label for="bio" class="form-label">Bio</label>
@@ -192,7 +208,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!------------------------ Edit form ------------------------>
+            <!------------------------ Create form ------------------------>
             <form>
               <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -234,7 +250,7 @@
                   placeholder="Choose a date"
                 />
               </div>
-              <!-------------------------- Update-btn ------------------------->
+              <!-------------------------- Create-btn ------------------------->
               <button type="submit" class="btn btn-primary px-5">
                 Create
               </button>
