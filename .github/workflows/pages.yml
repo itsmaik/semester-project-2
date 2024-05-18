@@ -48,7 +48,7 @@ jobs:
         uses: actions/configure-pages@v3 # Using the latest version
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4 # Updated to the latest version
+        uses: actions/upload-pages-artifact@v3 # Updated to the latest version
         with:
           path: './dist' # Ensure this points to your build directory
 
