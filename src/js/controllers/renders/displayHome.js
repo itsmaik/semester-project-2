@@ -1,7 +1,9 @@
 import { ListingsServices } from '../../services/ListingsServices';
+import { newListingController } from '../actions/newListing';
+import { searchController } from '../actions/search';
 import { createAuctionCard } from '../templates/auctionCard';
 
-async function displayHomeListings() {
+export default async function displayHomeListings() {
   const auctionContainer = document.querySelector('.auction-container');
   const endSoonContainer = document.querySelector('.ending-soon');
   if (!auctionContainer || !endSoonContainer) return;
@@ -21,7 +23,7 @@ async function displayHomeListings() {
         .filter((listing) => {
           const endsAtDate = new Date(listing.endsAt);
           const now = new Date();
-          return endsAtDate >= now; // Ensure listing ends in the future
+          return endsAtDate > now; // Ensure listing ends in the future
         })
         .sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt)) // Sort listings by end date, soonest first
         .slice(0, MAX_END_SOON); // Take only the first 6
@@ -37,11 +39,14 @@ async function displayHomeListings() {
       auctionContainer.innerHTML = '<p>No listings found.</p>';
       endSoonContainer.innerHTML = '<p>No listings ending soon.</p>';
     }
+
+    newListingController();
   } catch (error) {
     console.error('Error displaying listings:', error);
     auctionContainer.innerHTML = '<p>Error loading listings.</p>';
     endSoonContainer.innerHTML = '<p>Error loading listings.</p>';
   }
+  searchController();
 }
 
 document.addEventListener('DOMContentLoaded', displayHomeListings);
