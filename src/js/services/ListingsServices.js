@@ -8,8 +8,11 @@ export const ListingsServices = {
       'POST',
       ListingData,
     );
-    console.log(response);
-    return response;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async editListing(ListingData, id) {
@@ -18,24 +21,35 @@ export const ListingsServices = {
       'PUT',
       ListingData,
     );
-    console.log(response);
-    return response;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async getAllListings() {
     const response = await fetchWithHeaders(
-      `${BASE_API_URL}/auction/listings?_active=true&sort=created&sortOrder=desc`,
+      `${BASE_API_URL}/auction/listings?_active=true`,
       'GET',
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async getAllListingsPage(page, limit) {
     const response = await fetchWithHeaders(
-      `${BASE_API_URL}/auction/listings?_active=true&page=${page}&limit=${limit}&sort=created&sortOrder=desc`,
+      `${BASE_API_URL}/auction/listings?_active=true&page=${page}&limit=${limit}`,
       'GET',
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async getListingById(listingId) {
@@ -43,7 +57,11 @@ export const ListingsServices = {
       `${BASE_API_URL}/auction/listings/${listingId}?_seller=true&_bids=true`,
       'GET',
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async updateListing(listingId, listingData) {
@@ -52,7 +70,11 @@ export const ListingsServices = {
       'PUT',
       listingData,
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async deleteListing(listingId) {
@@ -60,8 +82,11 @@ export const ListingsServices = {
       `${BASE_API_URL}/auction/listings/${listingId}`,
       'DELETE',
     );
-    console.log(response);
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async bidOnListing(listingId, amount) {
@@ -73,7 +98,7 @@ export const ListingsServices = {
       },
     );
 
-    if (response.ok) {
+    if (response.data) {
       return response.data;
     } else {
       throw response;
@@ -85,15 +110,22 @@ export const ListingsServices = {
       `${BASE_API_URL}/auction/profiles/${name}/listings`,
       'GET',
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 
   async searchListings(searchParams, page, limit) {
-    console.log(searchParams);
     const response = await fetchWithHeaders(
       `${BASE_API_URL}/auction/listings/search?q=${searchParams}&_active=true&page=${page}&limit=${limit}`,
       'GET',
     );
-    return response.data;
+    if (response.data) {
+      return response.data;
+    } else {
+      throw response;
+    }
   },
 };
