@@ -212,8 +212,10 @@ export async function createSingleListingPage(listing) {
                       </p>
                       <div class="d-flex justify-content-around">
                         <button
-                          type="submit"
+                          type="button"
                           class="btn btn-outline-primary px-5"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
                         >
                           Cancel
                         </button>
