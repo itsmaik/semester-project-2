@@ -30,7 +30,7 @@ export const ListingsServices = {
 
   async getAllListings() {
     const response = await fetchWithHeaders(
-      `${BASE_API_URL}/auction/listings?_active=true`,
+      `${BASE_API_URL}/auction/listings?_active=true&sort=created&sortOrder=desc`,
       'GET',
     );
     if (response.data) {
@@ -42,7 +42,8 @@ export const ListingsServices = {
 
   async getAllListingsPage(page, limit) {
     const response = await fetchWithHeaders(
-      `${BASE_API_URL}/auction/listings?_active=true&page=${page}&limit=${limit}`,
+      `${BASE_API_URL}/auction/listings?_active=true&page=${page}&limit=${limit}&sort=created&sortOrder=desc`,
+
       'GET',
     );
     if (response.data) {
