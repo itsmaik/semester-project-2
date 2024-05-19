@@ -1,10 +1,10 @@
 import { ListingsServices } from '../../services/ListingsServices.js';
+import createFeedbackPopup from '../../utils/functions/feedback.js';
 
 export async function newListingController() {
   const newListingForm = document.querySelector('#newListingModal form');
   const title = newListingForm.querySelector('input#title');
   const description = newListingForm.querySelector('input#description');
-  const image = newListingForm.querySelector('input#image-url');
   const endsAt = newListingForm.querySelector('input#event-date');
 
   newListingForm
@@ -12,26 +12,34 @@ export async function newListingController() {
     .addEventListener('click', async (e) => {
       e.preventDefault();
 
-      if (!title && !endsAt) {
-        alert('Create a title and set an end date!');
-        return;
-      }
+      const imageInputs = newListingForm.querySelectorAll('input.image-url');
+      const images = [];
+
+      imageInputs.forEach((input) => {
+        if (input.value) {
+          images.push({
+            url: input.value || '',
+            alt: 'Listing Image',
+          });
+        }
+      });
 
       const newListingData = {
         title: title.value ?? '',
         description: description.value ?? '',
-        media: image.value
-          ? [
-              {
-                url: image.value,
-                alt: 'Listing Image',
-              },
-            ]
-          : [],
+        media: images,
         endsAt: endsAt.value ?? new Date(),
       };
 
-      await ListingsServices.createListing(newListingData);
-      window.location.reload();
+      try {
+        await ListingsServices.createListing(newListingData);
+        // window.location.reload();
+      } catch (error) {
+        if (error && error.errors && error.errors.length > 0) {
+          createFeedbackPopup(error.errors[0].message, 'error');
+        } else {
+          createFeedbackPopup('Error to create auction', 'error');
+        }
+      }
     });
 }
