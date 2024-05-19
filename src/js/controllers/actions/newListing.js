@@ -33,7 +33,7 @@ export async function newListingController() {
 
       try {
         await ListingsServices.createListing(newListingData);
-        // window.location.reload();
+        window.location.reload();
       } catch (error) {
         if (error && error.errors && error.errors.length > 0) {
           createFeedbackPopup(error.errors[0].message, 'error');
