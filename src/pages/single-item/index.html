@@ -145,9 +145,7 @@
     </nav>
 
     <!--------------------------------- Main-body-container ------------------------------->
-    <div class="container mt-5 mb-5 single-item-listing-container">
-      
-    </div>
+    <div class="container mt-5 mb-5 single-item-listing-container"></div>
 
     <div class="container mt-4 mb-4">
       <!-- Header Text -->
@@ -158,73 +156,7 @@
       </div>
 
       <!-- Cards for Stats -->
-      <div class="row justify-content-center mt-3">
-        <!-- First Stat Card -->
-        <div class="col-auto mb-3">
-          <div class="card">
-            <div class="row g-0 align-items-center justify-content-center">
-              <div class="col-md-5 text-center">
-                <img
-                  src="https://source.unsplash.com/featured/?profile"
-                  class="object-fit-cover ms-md-2 mt-2 mt-md-0"
-                  alt="Happy customer"
-                  style="width: 3rem; height: 3rem"
-                />
-              </div>
-              <div class="col-md-7">
-                <div class="card-body text-center p-2">
-                  <p class="card-title text-nowrap">Maik</p>
-                  <p class="card-text"><strong>$250</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Second Stat Card -->
-        <div class="col-auto mb-3">
-          <div class="card">
-            <div class="row g-0 align-items-center justify-content-center">
-              <div class="col-md-5 text-center">
-                <img
-                  src="https://source.unsplash.com/featured/?profile"
-                  class="object-fit-cover ms-md-2 mt-2 mt-md-0"
-                  alt="Happy customer"
-                  style="width: 3rem; height: 3rem"
-                />
-              </div>
-              <div class="col-md-7">
-                <div class="card-body text-center p-2">
-                  <p class="card-title text-nowrap">Maik</p>
-                  <p class="card-text"><strong>$250</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Third Stat Card -->
-        <div class="col-auto mb-3">
-          <div class="card">
-            <div class="row g-0 align-items-center justify-content-center">
-              <div class="col-md-5 text-center">
-                <img
-                  src="https://source.unsplash.com/featured/?profile"
-                  class="object-fit-cover ms-md-2 mt-2 mt-md-0"
-                  alt="Happy customer"
-                  style="width: 3rem; height: 3rem"
-                />
-              </div>
-              <div class="col-md-7">
-                <div class="card-body text-center p-2">
-                  <p class="card-title text-nowrap">Maik</p>
-                  <p class="card-text"><strong>$250</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row justify-content-center mt-3" id="bid-history-container"></div>
     </div>
     <!------------------- Login Container --------------------->
     <div id="login-modal-container"></div>
@@ -277,17 +209,19 @@
                   placeholder="Listing description"
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-3" id="gallery-container">
                 <label for="gallery" class="form-label"
                   >Image URL</label
                 >
                 <input
-                  type="url"
-                  class="form-control"
+                  type="text"
+                  class="form-control mb-2 image-url"
                   id="image-url"
                   placeholder="Image URL"
+                  name="image-url[]"
                 />
               </div>
+              <button type="button" id="add-image-button" class="btn btn-primary mb-2">+ Add Image</button>
               <div class="mb-3">
                 <label for="date" class="form-label">Ends at</label>
                 <input
