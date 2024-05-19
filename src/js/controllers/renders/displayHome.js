@@ -1,5 +1,6 @@
 import { ListingsServices } from '../../services/ListingsServices';
 import createFeedbackPopup from '../../utils/functions/feedback';
+import handleLoading from '../../utils/functions/handleLoading';
 import { newListingController } from '../actions/newListing';
 import { searchController } from '../actions/search';
 import { createAuctionCard } from '../templates/auctionCard';
@@ -13,6 +14,7 @@ export default async function displayHomeListings() {
   const MAX_END_SOON = 6; // Maximum number of listings to display in endSoonContainer
 
   try {
+    handleLoading(true);
     const listings = await ListingsServices.getAllListings();
     if (listings && listings.length > 0) {
       // Display listings in the main auction container
@@ -48,7 +50,10 @@ export default async function displayHomeListings() {
     } else {
       createFeedbackPopup('Error to list auctions', 'error');
     }
+  } finally {
+    handleLoading(false);
   }
+
   searchController();
 }
 

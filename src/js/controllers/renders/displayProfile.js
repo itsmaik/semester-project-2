@@ -1,6 +1,7 @@
 import { AuthServices } from '../../services/AuthServices';
 import { ListingsServices } from '../../services/ListingsServices';
 import createFeedbackPopup from '../../utils/functions/feedback';
+import handleLoading from '../../utils/functions/handleLoading';
 import { newListingController } from '../actions/newListing';
 import { updateProfileController } from '../actions/profile';
 import { createProfileCard } from '../templates/profileCard';
@@ -18,6 +19,7 @@ async function displayProfile() {
   const currentLoggedProfile = await AuthServices.getCurrentUser();
 
   try {
+    handleLoading(true);
     const profileDetails = await AuthServices.getLoggedProfile(
       currentLoggedProfile.name,
     );
@@ -47,6 +49,8 @@ async function displayProfile() {
     } else {
       createFeedbackPopup('Error to load profile', 'error');
     }
+  } finally {
+    handleLoading(false);
   }
 }
 

@@ -1,6 +1,7 @@
 import { AuthServices } from '../../services/AuthServices';
 import { ListingsServices } from '../../services/ListingsServices';
 import createFeedbackPopup from '../../utils/functions/feedback';
+import handleLoading from '../../utils/functions/handleLoading';
 import { deleteListingController } from '../actions/deleteListing';
 import { editListingController } from '../actions/editListing';
 import { newListingController } from '../actions/newListing';
@@ -20,6 +21,7 @@ async function displaySingleListing(id) {
   const currentUser = AuthServices.getCurrentUser();
 
   try {
+    handleLoading(true);
     const listings = await ListingsServices.getListingById(id);
 
     if (listings) {
@@ -41,6 +43,8 @@ async function displaySingleListing(id) {
     } else {
       createFeedbackPopup('Error to load single auction', 'error');
     }
+  } finally {
+    handleLoading(false);
   }
 
   const amountInput = document.querySelector('.form-control.amount-input');

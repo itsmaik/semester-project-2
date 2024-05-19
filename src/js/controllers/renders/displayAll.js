@@ -1,5 +1,6 @@
 import { ListingsServices } from '../../services/ListingsServices';
 import createFeedbackPopup from '../../utils/functions/feedback';
+import handleLoading from '../../utils/functions/handleLoading';
 import { newListingController } from '../actions/newListing';
 import { searchController } from '../actions/search';
 import { createAuctionCard } from '../templates/auctionCard';
@@ -19,6 +20,7 @@ export default async function displayAllListings(page) {
   let listings;
 
   try {
+    handleLoading(true);
     if (window.location.search.length > 0) {
       const url = window.location.href;
       const urlParams = new URLSearchParams(new URL(url).search);
@@ -42,6 +44,8 @@ export default async function displayAllListings(page) {
     } else {
       createFeedbackPopup('Error to list auctions', 'error');
     }
+  } finally {
+    handleLoading(false);
   }
 
   updateNavigation();
