@@ -11,5 +11,6 @@ $position-values: (
   50: 50%,
   100: 100%,
 );
+$enable-transitions: true;
 
 @import 'bootstrap/scss/bootstrap';

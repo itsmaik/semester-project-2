@@ -23,7 +23,6 @@ async function displaySingleListing(id) {
   try {
     handleLoading(true);
     const listings = await ListingsServices.getListingById(id);
-
     if (listings) {
       const singleListingHtml = await createSingleListingPage(listings);
       const bidsHistory = await createBidsHistory(listings);
@@ -35,7 +34,6 @@ async function displaySingleListing(id) {
         deleteListingController(listings);
         editListingController(listings);
       }
-      newListingController();
     }
   } catch (error) {
     if (error && error.errors && error.errors.length > 0) {
@@ -46,6 +44,8 @@ async function displaySingleListing(id) {
   } finally {
     handleLoading(false);
   }
+
+  newListingController();
 
   const amountInput = document.querySelector('.form-control.amount-input');
   if (amountInput) {
@@ -71,7 +71,9 @@ async function displaySingleListing(id) {
       try {
         await ListingsServices.bidOnListing(id, amount);
         createFeedbackPopup('Bid submitted successfully!', 'success');
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } catch (error) {
         if (error && error.errors && error.errors.length > 0) {
           createFeedbackPopup(error.errors[0].message, 'error');

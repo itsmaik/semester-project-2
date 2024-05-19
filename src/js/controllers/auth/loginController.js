@@ -15,17 +15,18 @@ export function loginController() {
 
     try {
       await AuthServices.login(credentials);
-      window.location.reload();
+
       createFeedbackPopup('Login Successful', 'success');
       updateButtonVisibility();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       if (error && error.errors && error.errors.length > 0) {
         createFeedbackPopup(error.errors[0].message, 'error');
       } else {
         createFeedbackPopup('Error to update profile', 'error');
       }
-    } finally {
-      document.querySelector('#loginModal'); //make loading function
     }
   });
 }

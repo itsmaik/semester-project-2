@@ -321,7 +321,7 @@ export async function createSingleListingPage(listing) {
                     <button
                       class="btn btn-success text-white px-lg-4 bid-modal-btn mb-5"
                       data-bs-toggle="modal"
-                      data-bs-target="#bidModal"
+                      data-bs-target="#loginModal"
                       type="button"
                     >
                       Bid Now
