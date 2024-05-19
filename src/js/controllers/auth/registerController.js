@@ -31,3 +31,7 @@ export function registerController() {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  registerController();
+});  

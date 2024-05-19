@@ -29,3 +29,7 @@ export function loginController() {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  loginController();
+});

@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./src/js/main.js" defer type="module"></script>
     <title>Homepage|BidBlast</title>
   </head>
@@ -72,7 +71,32 @@
             Login
           </button>
           <!------------------- Login Container --------------------->
-          <div id="login-modal-container"></div>
+          <div id="login-modal-container">
+            <div class="modal fade loginModal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="loginModalLabel">BidBlast</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!------------------------ Login form ------------------------>
+                    <form>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="email-login" placeholder="Enter your email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-login" placeholder="Enter your password">
+                      </div>
+                      <button type="submit" class="btn login-btn btn-primary px-5">Log in</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!------------------- Register Button --------------------->
           <button
@@ -105,7 +129,37 @@
             Logout
           </button>
           <!------------------- Register Container --------------------->
-          <div id="register-modal-container"></div>
+          <div id="register-modal-container">
+            <!--------------------------------- Modal ------------------------>
+            <div class="modal fade registerModal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="registerModalLabel">BidBlast</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!------------------------ Register form ------------------------>
+                    <form>
+                      <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                      </div>
+                      <button type="submit" class="btn btn-primary px-5">Register</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
