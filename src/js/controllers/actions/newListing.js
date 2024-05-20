@@ -1,11 +1,20 @@
 import { ListingsServices } from '../../services/ListingsServices.js';
 import createFeedbackPopup from '../../utils/functions/feedback.js';
+//import { AuthServices } from '../../services/AuthServices.js';
 
 export async function newListingController() {
   const newListingForm = document.querySelector('#newListingModal form');
   const title = newListingForm.querySelector('input#title');
   const description = newListingForm.querySelector('input#description');
   const endsAt = newListingForm.querySelector('input#event-date');
+
+  // const user = AuthServices.getCurrentUser();
+  // if (!user) {
+  //   document
+  //     .querySelector('#new-btn')
+  //     .setAttribute('data-bs-target', '#loginModal');
+  //   return;
+  // }
 
   newListingForm
     .querySelector('button')

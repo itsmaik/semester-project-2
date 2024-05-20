@@ -30,15 +30,17 @@ async function displaySingleListing(id) {
       singleListingContainer.innerHTML = singleListingHtml;
       bidsHistoryContainer.innerHTML = bidsHistory;
 
-      if (listings.seller.name === currentUser.name) {
+      if (listings.seller.name === currentUser?.name) {
         deleteListingController(listings);
         editListingController(listings);
       }
     }
   } catch (error) {
+    console.error(error);
     if (error && error.errors && error.errors.length > 0) {
       createFeedbackPopup(error.errors[0].message, 'error');
     } else {
+      console.error(error);
       createFeedbackPopup('Error to load single auction', 'error');
     }
   } finally {
