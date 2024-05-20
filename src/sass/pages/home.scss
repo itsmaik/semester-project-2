@@ -1,8 +1,8 @@
 @import '../abstracts/mixins.scss';
 
 .hero-section {
-  background: url('https://source.unsplash.com/featured/?interior') no-repeat
-    center center;
+  background: url('/src/assets/img/interior1-1618221195710-dd6b41faaea6.avif')
+    no-repeat center center;
   background-size: cover;
   @include media-height(25rem, 35rem, 40rem);
 }
