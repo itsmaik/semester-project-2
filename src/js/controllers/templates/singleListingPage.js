@@ -260,41 +260,39 @@ export async function createSingleListingPage(listing) {
                   .join('')}
               </div>
               
-              ${
-                images.length > 1
-                  ? `
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carouselExample"
-                      data-bs-slide="prev"
-                    >
-                      <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
+        ${
+          images.length > 0
+            ? `
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
 
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carouselExample"
-                      data-bs-slide="next"
-                    >
-                      <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-                `
-                  : ''
-              }
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
+          `
+            : ''
+        }
           <div class="col-md-7">
             <div
               class="card-body h-100 d-flex flex-column position-relative p-0"
@@ -308,7 +306,7 @@ export async function createSingleListingPage(listing) {
                   currentUserName
                     ? `
                     <button
-                      class="btn btn-success text-white px-lg-4 bid-modal-btn mb-5"
+                      class="btn btn-success text-white px-lg-4 bid-modal-btn mb-5 mt-4"
                       data-bs-toggle="modal"
                       data-bs-target="#bidModal"
                       type="button"
@@ -319,7 +317,7 @@ export async function createSingleListingPage(listing) {
                   `
                     : `
                     <button
-                      class="btn btn-success text-white px-lg-4 bid-modal-btn mb-5"
+                      class="btn btn-success text-white px-lg-4 bid-modal-btn mb-5 mt-4"
                       data-bs-toggle="modal"
                       data-bs-target="#loginModal"
                       type="button"
