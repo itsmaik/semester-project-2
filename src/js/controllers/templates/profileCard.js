@@ -50,7 +50,7 @@ export function createProfileCard(profile, loggedProfile) {
           ${
             email === loggedProfile.email && name === loggedProfile.name
               ? `
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-3">
+            <div class="d-grid gap-2 d-flex justify-content-center mt-3">
               <button 
                 id="edit-btn"
                 class="btn btn-outline-primary px-lg-4 h-75 me-2"
