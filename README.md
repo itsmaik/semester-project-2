@@ -1,12 +1,14 @@
 # Project Exam 1
 
+Screenshot of homepage desktop version
 ![image](/src/assets/img/home-desktop-md.png)
+Screenshot of user profile desktop version
 ![image](/src/assets/img/profile-desktop-md.png)
 
-The BidBlast is an auction website made for education purpose.
 
 ## Description
 
+The BidBlast is an auction website made for education purpose.
 In the BidBlast the user can:
 
 - User with @stud.noroff.no email can register a profile
