@@ -13,4 +13,9 @@ $position-values: (
 );
 $enable-transitions: true;
 
+$pagination-focus-color: $primary;
+$pagination-focus-bg: none;
+$pagination-focus-box-shadow: 0;
+$pagination-focus-outline: 0;
+
 @import 'bootstrap/scss/bootstrap';
