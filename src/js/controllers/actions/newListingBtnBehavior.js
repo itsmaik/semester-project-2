@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 export function newListingBtnBehavior() {
-  const newListingBtn = document.querySelectorAll(".new-btn");
-  
-  newListingBtn.forEach(newBtn => {
+  const newListingBtn = document.querySelectorAll('.new-btn');
+
+  newListingBtn.forEach((newBtn) => {
     if (AuthServices.getAccessToken()) {
       newBtn.removeAttribute('data-bs-toggle');
       newBtn.setAttribute('data-bs-target', '#newListingModal');
@@ -17,14 +17,14 @@ export function newListingBtnBehavior() {
       newBtn.setAttribute('data-bs-target', '#loginModal');
     }
 
-    newBtn.addEventListener("click", function() {
+    newBtn.addEventListener('click', function () {
       const targetModal = newBtn.getAttribute('data-bs-target');
       const targetModalElement = document.querySelector(targetModal);
       if (targetModalElement) {
         const modal = new bootstrap.Modal(targetModalElement);
         modal.show();
       } else {
-        console.error("Modal element not found:", targetModal);
+        console.error('Modal element not found:', targetModal);
       }
     });
   });
