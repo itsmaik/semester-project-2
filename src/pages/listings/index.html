@@ -9,10 +9,10 @@
   </head>
 
   <body>
-    <!--------------------------- NAVBAR ----------------------------->
+    <!--************************* NAVBAR *************************-->
     <nav class="navbar navbar-expand-lg p-lg-4 navbar-light bg-primary">
       <div class="container-fluid">
-        <!----------------------- Logo -------------------------------->
+        <!--************************* Logo *************************-->
         <a class="navbar-brand dm-sans-700 text-white" href="/">BidBlast</a>
         <button
           class="navbar-toggler"
@@ -25,7 +25,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!------------------------- Hamburger Menu ------------------------>
+        <!--********************* Hamburger Menu *********************-->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
@@ -53,7 +53,7 @@
               >
             </li>
           </ul>
-          <!------------------- Login Button --------------------->
+          <!--****************** Login Button ******************-->
           <button
             class="btn btn-secondary mb-2 mb-lg-0 me-2 px-lg-4 login-modal-btn"
             data-bs-toggle="modal"
@@ -62,10 +62,10 @@
           >
             Login
           </button>
-          <!------------------- Login Container --------------------->
+          <!--******************** Login Container ********************-->
           <div id="login-modal-container">
 
-            <!--------------------------------- Modal ------------------------>
+            <!--*********************** Modal ***********************-->
             <div class="modal fade loginModal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -74,7 +74,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <!------------------------ Login form ------------------------>
+                    <!--***************** Login form *****************-->
                     <form>
                       <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
@@ -92,7 +92,7 @@
             </div>
           </div>
 
-          <!------------------- Register Button --------------------->
+          <!--******************* Register Button *******************-->
           <button
             class="btn btn-outline-secondary px-lg-4 register-modal-btn"
             data-bs-toggle="modal"
@@ -102,7 +102,7 @@
             Register
           </button>
 
-          <!------------------- Profile Button --------------------->
+          <!--******************* Profile Button *******************-->
           <a href="/src/pages/profile/"
             ><button
               class="btn btn-secondary px-lg-4 profile-btn me-2"
@@ -112,16 +112,16 @@
             </button></a
           >
 
-          <!------------------- Logout Button --------------------->
+          <!--****************** Logout Button ******************-->
           <button
             class="btn btn-outline-secondary px-lg-4 logout-btn"
             type="button"
           >
             Logout
           </button>
-          <!------------------- Register Container --------------------->
+          <!--************** Register Container **************-->
           <div id="register-modal-container">
-            <!--------------------------------- Modal ------------------------>
+            <!--********************* Modal *********************-->
             <div class="modal fade registerModal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -130,7 +130,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <!------------------------ Register form ------------------------>
+                    <!--*********** Register form ***********-->
                     <form>
                       <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
@@ -154,7 +154,7 @@
         </div>
       </div>
     </nav>
-    <!--------------------------- SUB-NAVBAR ----------------------------->
+    <!--************************* SUB-NAVBAR *************************-->
     <nav class="navbar d-none d-lg-block navbar-expand-lg p-lg-3 bg-secondary">
       <div class="container-fluid">
         <div
@@ -193,10 +193,8 @@
 
     <div class="container mt-5">
       <div class="d-flex flex-wrap">
-        <!-- Use d-flex to create a flexbox container -->
-        <!-- Dropdowns -->
+        <!--********************** Dropdowns **********************-->
         <div class="dropdown me-2">
-          <!-- Add margin-right (me-2) to separate the items -->
           <button
             class="btn d-none d-md-block btn-secondary dropdown-toggle"
             type="button"
@@ -209,7 +207,6 @@
           </button>
         </div>
         <div class="dropdown me-2">
-          <!-- Add margin-right (me-2) to separate the items -->
           <button
             class="btn d-none d-md-block btn-secondary dropdown-toggle"
             type="button"
@@ -222,7 +219,7 @@
           </button>
         </div>
 
-        <!-- Search Form -->
+        <!--******************** Search Form ********************-->
         <form class="d-flex ms-md-auto form-size">
           <!-- flex-grow-1 allows the form to take up the remaining space -->
           <input
@@ -239,9 +236,9 @@
       </div>
     </div>
 
-    <!--------------------------- BODY-CONTENT ----------------------------->
+    <!--************************* BODY-CONTENT *************************-->
     <div class="container mt-2 mt-md-2">
-      <!------------------------- Latest Auctions Row ------------------------>
+      <!--******************** Latest Auctions Row ********************-->
       <div class="row pt-3 pt-md-5 text-success">
         <div class="col">
           <h2>Latest Auctions</h2>
@@ -249,7 +246,7 @@
       </div>
 
       <div class="row all-listings">
-        <!--------------------------- Auction Item---------------------------->
+        <!--************************* Auction Item *************************-->
         <div class="col-md-4 mt-3 mb-3 mb-md-5">
           <div class="card auction-card">
             <img
@@ -286,7 +283,7 @@
           </div>
         </div>
       </div>
-      <!--------------------------- Pagination ---------------------------->
+      <!--************************* Pagination *************************-->
       <div id="pagination" class="row mb-5 mt-3">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
@@ -331,7 +328,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!------------------------ Create form ------------------------>
+            <!--********************* Create form *********************-->
             <form>
               <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -374,7 +371,7 @@
                   id="event-date"
                 />
               </div>
-              <!-------------------------- Create-btn ------------------------->
+              <!--******************** Create-btn ********************-->
               <button type="submit" class="btn btn-primary px-5">
                 Create
               </button>
@@ -384,7 +381,7 @@
       </div>
     </div>
 
-    <!------------------------------- FOOTER --------------------------------->
+    <!--************************* FOOTER *************************-->
     <div class="footer bg-success mt-5">
       <div class="container">
         <p class="text-center p-4 text-white">
