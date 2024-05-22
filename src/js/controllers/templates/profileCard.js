@@ -15,8 +15,6 @@ export function createProfileCard(profile, loggedProfile) {
   const email = profile.data.email;
   const bio = profile.data.bio || '';
   const credits = profile.data.credits;
-  const listingsCount = profile.data._count.listings;
-  const winsCount = profile.data._count.wins;
 
   return `
     <div class="container">
@@ -39,13 +37,10 @@ export function createProfileCard(profile, loggedProfile) {
           ${
             email === loggedProfile.email && name === loggedProfile.name
               ? `
-              <p class="card-text">Credits: ${credits}</p>
+              <p class="card-text fw-bold">Credits: ${credits}</p>
             `
               : ''
           }
-          <!-- Listings and Wins -->
-          <p class="card-text">Listings: ${listingsCount}, Wins: ${winsCount}</p>
-
           <!-- Action Buttons -->
           ${
             email === loggedProfile.email && name === loggedProfile.name
@@ -62,7 +57,7 @@ export function createProfileCard(profile, loggedProfile) {
               </button>
               <button 
                 id="new-btn"
-                class="btn btn-secondary px-lg-4 h-75 me-2"
+                class="btn btn-primary px-lg-4 h-75 me-2"
                 data-bs-toggle="modal"
                 data-bs-target="#newListingModal"
                 type="button"

@@ -5,6 +5,13 @@
     no-repeat center center;
   background-size: cover;
   @include media-height(25rem, 35rem, 40rem);
+  max-width: 1440px;
+  margin: auto;
+}
+
+.icons-container {
+  max-width: 1440px;
+  margin: auto;
 }
 
 .subscribe-media {

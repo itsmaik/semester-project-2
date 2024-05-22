@@ -45,7 +45,7 @@
               </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Contact us</a>
+              <a class="nav-link text-white disabled" href="#">Contact us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="/src/pages/listings/"
@@ -152,7 +152,7 @@
         </div>
       </div>
     </nav>
-    <!--************************* SUB-NAVBAR*************************-->
+    <!--************************* SUB-NAVBAR *************************-->
     <nav
       class="navbar d-none d-lg-block navbar-expand-lg p-lg-3 navbar-light bg-secondary"
     >
@@ -179,7 +179,7 @@
               </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-primary" href="#">Contact us</a>
+              <a class="nav-link link-primary disabled" href="#">Contact us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-primary" href="/src/pages/listings/"
@@ -191,21 +191,21 @@
       </div>
     </nav>
 
-    <!--************************* PROFILE *************************-->
+    <!--************************* Owner Items *************************-->
     <div class="container my-5">
       <div class="container container-fluid text-center border border-1 py-5 profile-details"></div>
       <div class="row mt-5">
         <div class="col-8 col-md-12">
-          <button class="btn fs-5 active">My listings</button>
-          <button class="btn fs-5 ms-lg-5">My sold items</button>
-          <button class="btn fs-5 ms-lg-5">My purchased items</button>
+          <button class="btn fs-5 btn-link link-offset-3">My listings</button>
+          <button class="btn fs-5 ms-lg-5 disabled btn-link link-underline link-underline-opacity-0">My sold items</button>
+          <button class="btn fs-5 ms-lg-5 disabled btn-link link-underline link-underline-opacity-0">My purchased items</button>
         </div>
       </div>
-      <!--************************* Auction Item*************************-->
+      <!--************************* Auction Item *************************-->
       <div class="row mt-5 mb-3 profile-listings-container"></div>
     </div>
 
-    <!--************************* Modal *************************-->
+    <!--************************* Edit Modal *************************-->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -214,7 +214,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!--********************* Register form *********************-->
+            <!--********************* Edit form *********************-->
             <form id="profile-details-form">
               <div class="mb-3">
                 <label for="bio" class="form-label">Bio</label>
@@ -234,7 +234,7 @@
         </div>
       </div>
     </div>
-
+    <!--********************* New Listing Modal *********************-->
     <div
       class="modal fade"
       id="newListingModal"
